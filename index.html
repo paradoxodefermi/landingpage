@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/f7e80c7de8.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Navbar</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#">Landing Page</a></div>
+        <ul class="links">
+          <li><a href="hero">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="services">Services</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+        <a href="#" class="action_btn">Get Started</a>
+        <div class="toggle_btn">
+          <i class="fas fa-bars" style="color: #ffffff"></i>
+          <i class="fas fa-times" style="color: #ffffff; display: none"></i>
+        </div>
+      </div>
+      <div class="dropdown_menu">
+        <li><a href="hero">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="services">Services</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="#" class="action_btn">Get Started</a></li>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero">
+        <h1>Welcome</h1>
+        <p>
+          This is an example of one of the websites I can make <br />
+          that works for both Desktop and Mobile
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const toggleBtn = document.querySelector(".toggle_btn");
+      const toggleBtnIcon = document.querySelector(".toggle_btn i");
+      const dropdownMenu = document.querySelector(".dropdown_menu");
+
+      toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle("open");
+        const isOpen = dropdownMenu.classList.contains("open");
+
+        toggleBtnIcon.classList = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      };
+    </script>
+  </body>
+</html>
